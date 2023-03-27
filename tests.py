@@ -192,19 +192,3 @@ def test_registration_and_redir_auth(selenium):
     page_reg.find_other_element(*AuthLocators.redirect_auth).click()
 
     assert 'Авторизация' in page_reg.find_other_element(*AuthLocators.authorization).text
-
-@pytest.mark.parametrize("valid_first_name",
-                         [
-                             (Settings.russian_generate_string) * 2
-                             , (Settings.russian_generate_string) * 3
-                             , (Settings.russian_generate_string) * 15
-                             , (Settings.russian_generate_string) * 29
-                             , (Settings.russian_generate_string) * 30
-                         ],
-                         ids=
-                         [
-                             'russ_symbols=2', 'russ_symbols=3', 'russ_symbols=15',
-                             'russ_symbols=29', 'russ_symbols=30'
-                         ])
-
-
